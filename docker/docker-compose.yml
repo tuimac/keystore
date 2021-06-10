@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  mysql:
+    build: ./database
+    environment:
+      MYSQL_USER: keystore
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: keystore
+      MYSQL_RANDOM_ROOT_PASSWORD: 'true'
+    command: --default-authentication-plugin=mysql_native_password
+    expose:
+      - 3306
+    volumes:
+      - './volume:/var/lib/mysql'
+    tty: true
+    stdin_open: true
+    networks:
+      - keystore
+  backend:
+    build: ./backend
+    restart: always
+    environment:
+      - DB_USER=keystore
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=keystore
+      - DB_URL=mysql
+    ports:
+      - 8080:8080
+    networks:
+      - keystore
+  frontend:
+    build: ./frontend
+    environment:
+      - BACKEND_URL=docker-public:8080
+    ports:
+      - 80:80
+    networks:
+      - keystore
+networks:
+  keystore:
+    name: keystore
