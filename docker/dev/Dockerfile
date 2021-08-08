@@ -8,7 +8,7 @@ EXPOSE 80
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache git bash vim curl icu-dev icu-libs ncurses tree nodejs nodejs-npm openjdk8 && \
+    apk add --no-cache git bash vim curl icu-dev icu-libs ncurses tree nodejs npm openjdk11 && \
     mkdir /etc/vim/backup && \
     mkdir /etc/vim/undo && \
     rm /etc/vim/vimrc && \
