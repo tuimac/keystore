@@ -10,13 +10,13 @@ EXPOSE 8080
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache git bash vim curl ncurses tree npm nodejs openjdk11 nginx && \
+    apk add --no-cache git bash vim curl ncurses tree npm nodejs openjdk11 nginx postgresql-client && \
     mkdir /etc/vim/backup && \
     mkdir /etc/vim/undo && \
     rm /etc/vim/vimrc && \
     curl -L https://raw.githubusercontent.com/tuimac/tools/master/vim/vimrc -o /etc/vim/vimrc && \
     curl -L https://raw.githubusercontent.com/tuimac/tools/master/linux/bashrc/.bashrc_node_docker -o /root/.bashrc  && \
-    curl -L https://raw.githubusercontent.com/tuimac/tools/master/git/setup.sh -o /root/setup.sh && \
+    curl -L https://raw.githubusercontent.com/tuimac/tools/master/git/setup.sh -o /root/setup.sh | chmod +x setup.sh&& \
     git clone https://github.com/tuimac/keystore && \
     cd /root/keystore/src/frontend && \
     npm install && \
