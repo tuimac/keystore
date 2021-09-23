@@ -1,12 +1,14 @@
 version: '3.9'
 services:
-  keystore-db:
+  postgres:
     image: postgres
-    container_name: keystore-db
+    container_name: postgres
     environment:
       POSTGRES_USER: keystore
       POSTGRES_PASSWORD: password
       POSTGRES_DB: keystore
+    volumes:
+      - ./data:/var/lib/postgresql/data
     expose:
       - 5432
     tty: true

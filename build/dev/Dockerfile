@@ -16,7 +16,8 @@ RUN apk update && \
     rm /etc/vim/vimrc && \
     curl -L https://raw.githubusercontent.com/tuimac/tools/master/vim/vimrc -o /etc/vim/vimrc && \
     curl -L https://raw.githubusercontent.com/tuimac/tools/master/linux/bashrc/.bashrc_node_docker -o /root/.bashrc  && \
-    curl -L https://raw.githubusercontent.com/tuimac/tools/master/git/setup.sh -o /root/setup.sh | chmod +x setup.sh&& \
+    curl -L https://raw.githubusercontent.com/tuimac/tools/master/git/setup.sh -o /root/setup.sh && \
+    chmod +x setup.sh && \
     git clone https://github.com/tuimac/keystore && \
     cd /root/keystore/src/frontend && \
     npm install && \
