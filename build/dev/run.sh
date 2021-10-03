@@ -25,6 +25,7 @@ function deleteAll(){
     docker-compose down
     docker rmi ${NAME}
     cleanup
+    sudo rm -rf data/
 }
 
 function userguide(){
