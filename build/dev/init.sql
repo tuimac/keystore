@@ -7,8 +7,7 @@ CREATE TABLE IF NOT EXISTS K_USER (
 );
 
 CREATE TABLE IF NOT EXISTS K_KEYSTORE (
-    KeyID serial PRIMARY KEY NOT NULL,
-    KeyName varchar(255) NOT NULL,
+    KeyName varchar(255) PRIMARY KEY NOT NULL,
     UserName varchar(255) NOT NULL REFERENCES K_USER(UserName),
     Memo text,
     Genre varchar(255)
