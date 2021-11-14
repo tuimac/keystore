@@ -15,15 +15,15 @@ class KeystoreBase(views.APIView):
 
     def get(self, request, *args, **kwargs):
         try:
-            if self.kwargs.get('name') == None:
+            if self.kwargs.get('keyname') == None:
                 query = Keystore.objects.all()
             else:
-                query = Keystore.objects.filter(name=self.kwargs.get('name'))
+                query = Keystore.objects.filter(name=self.kwargs.get('keyname'))
             response = serializers.serialize('json', query)
             return Response(response)
         except:
             logger.error(traceback.format_exc())
-            Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            Response(serializers.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def post(self, request, *args, **kwargs):
         try:
@@ -34,11 +34,11 @@ class KeystoreBase(views.APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except:
             logger.error(traceback.format_exc())
-            Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            Response(serializers.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def put(self, request, *args, **kwargs):
         try:
-            target = Keystore.objects.get(name=self.kwargs.get('name'))
+            target = Keystore.objects.get(name=self.kwargs.get('keyname'))
             serializer = KeystoreSerializer(target, data=request.data)
             if serializer.is_valid():
                 serializer.save()
@@ -46,15 +46,15 @@ class KeystoreBase(views.APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except:
             logger.error(traceback.format_exc())
-            Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            Response(serializers.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def delete(self, request, *args, **kwargs):
         try:
-            target = Keystore.objects.filter(name=self.kwargs.get('name'))
+            target = Keystore.objects.filter(name=self.kwargs.get('keyname'))
             if target:
                 target.delete()
                 return Response(status=status.HTTP_204_NO_CONTENT)
             return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except:
             logger.error(traceback.format_exc())
-            Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            Response(serializers.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
