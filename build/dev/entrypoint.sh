@@ -6,7 +6,7 @@ npm start &
 cd /root/keystore/src/backend
 
 while true; do
-    PGPASSWORD=password  psql -U keystore -c "\l"
+    PGPASSWORD=password psql -U keystore -h postgres -c "\l"
     if [ `echo $?` -eq 0 ]; then
         break
     fi
