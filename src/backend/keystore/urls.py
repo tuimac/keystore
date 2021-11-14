@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import ItemBase
+from .views import KeystoreBase
 
 urlpatterns = [
-    path('', ItemBase.as_view()),
-    path('<str:name>/', ItemBase.as_view())
+    path('', KeystoreBase.as_view()),
+    path('<str:name>/', KeystoreBase.as_view())
 ]
