@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from './home.service';
+import { KeystoreService } from '../../services/keystore.service';
 
 @Component({
   selector: 'home',
@@ -10,14 +10,14 @@ export class HomeComponent implements OnInit {
 
   result: any;
 
-  constructor(private homeService: HomeService) { }
+  constructor(private keystoreService: KeystoreService) { }
 
   ngOnInit(): void {
     this.getKey();
   }
 
   getKey(): void{
-    this.homeService.getKey()
+    this.keystoreService.getKey()
       .subscribe(data => {
         this.result = data;
         console.log(this.result);

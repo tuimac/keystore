@@ -6,14 +6,13 @@ import { map, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class KeystoreService {
 
   public url: string = window.location.protocol + '//' + window.location.hostname + '/api/keystore/'
 
   constructor(private http: HttpClient) { }
 
   getKey() {
-    console.log(this.url);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
@@ -23,7 +22,7 @@ export class HomeService {
       { headers },
     ).pipe(
       map((data) => {
-        return data;
+        return JSON.parse(data as string);
       },
       catchError(error => {
         return throwError('KeyStore: There are some error.');
