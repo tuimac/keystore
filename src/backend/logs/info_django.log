@@ -4,3 +4,9 @@
 Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
 
 "GET /api/keystore/ HTTP/1.0" 200 433
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-20 03:59:56,990
+
+Source log file: /usr/lib/python3.9/site-packages/django/utils/autoreload.py line: 637
+
+Watching for file changes with StatReloader

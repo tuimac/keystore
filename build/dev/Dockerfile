@@ -23,6 +23,7 @@ RUN apk update && \
     git clone https://github.com/tuimac/keystore && \
     cd /root/keystore/src/frontend && \
     npm install && \
+    npm install -g @angular/cli && \
     git config --global user.email "tuimac.devadm01@gmail.com" && \
     git config --global user.name "tuimac"
 
