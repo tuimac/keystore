@@ -19,8 +19,8 @@ class KeystoreBase(views.APIView):
                 query = Keystore.objects.all()
             else:
                 query = Keystore.objects.filter(keyname=self.kwargs.get('keyname'))
-            response = serializers.serialize('json', query)
-            return Response(response)
+            response = KeystoreSerializer(query, many=True)
+            return Response(response.data)
         except:
             logger.error(traceback.format_exc())
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)

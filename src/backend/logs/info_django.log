@@ -1,12 +1,256 @@
 ----------------------------------------------------------------------------------------------------
-[INFO] - 2021-11-14 07:20:01,410
+[INFO] - 2021-11-21 04:53:34,089
+
+Source log file: /root/keystore/src/backend/keystore/views.py line: 23
+
+KeystoreSerializer(<QuerySet [<Keystore: Keystore object (web1)>, <Keystore: Keystore object (web2)>, <Keystore: Keystore object (web2)>]>, many=True):
+    keyname = CharField(max_length=255, required=True, validators=[<UniqueValidator(queryset=Keystore.objects.all())>])
+    username = CharField(max_length=255, required=True)
+    memo = CharField(style={'base_template': 'textarea.html'})
+    genre = CharField(max_length=255)
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 04:53:34,100
 
 Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
 
-"GET /api/keystore/ HTTP/1.0" 200 433
+"GET /api/keystore/ HTTP/1.0" 200 231
 ----------------------------------------------------------------------------------------------------
-[INFO] - 2021-11-20 03:59:56,990
+[INFO] - 2021-11-21 04:53:50,368
+
+Source log file: /usr/lib/python3.9/site-packages/django/utils/autoreload.py line: 251
+
+/root/keystore/src/backend/keystore/views.py changed, reloading.
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 04:53:50,784
 
 Source log file: /usr/lib/python3.9/site-packages/django/utils/autoreload.py line: 637
 
 Watching for file changes with StatReloader
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 04:54:42,033
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 04:55:14,812
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 04:55:54,640
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 04:57:52,547
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 05:00:21,974
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 05:00:33,733
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 06:22:44,071
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 06:22:51,375
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 06:26:28,168
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 06:26:45,536
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 06:27:16,081
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 06:27:35,643
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 06:27:47,628
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 06:27:51,778
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 06:29:19,264
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 06:32:34,363
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 06:48:41,864
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:02:06,015
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:03:01,298
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:04:10,058
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:04:21,810
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:06:54,345
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:09:18,444
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:15:32,239
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:15:57,590
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:16:02,618
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:18:21,801
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:18:27,632
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:18:37,899
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:18:48,416
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:22:07,538
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:22:31,920
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:23:16,478
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:23:25,988
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:24:09,799
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:24:53,887
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:25:08,824
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-21 07:25:24,106
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231

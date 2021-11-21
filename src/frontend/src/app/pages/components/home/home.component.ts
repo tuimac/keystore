@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { KeystoreService } from '../../services/keystore.service';
+import { Keystore } from '../../models/keystore';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'home',
@@ -9,6 +12,8 @@ import { KeystoreService } from '../../services/keystore.service';
 export class HomeComponent implements OnInit {
 
   result: any;
+  displayedColumns: string[] = ['keyname', 'username', 'memo', 'genre'];
+  dataSource: any;
 
   constructor(private keystoreService: KeystoreService) { }
 
@@ -18,9 +23,10 @@ export class HomeComponent implements OnInit {
 
   getKey(): void{
     this.keystoreService.getKey()
-      .subscribe(data => {
-        this.result = data;
-        console.log(this.result);
+      .subscribe((data: Keystore[]) => {
+        this.dataSource = new MatTableDataSource<Keystore>(data);
+        console.log(data);
       })
   }
 }
+

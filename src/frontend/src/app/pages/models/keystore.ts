@@ -1,5 +1,5 @@
 export interface Keystore {
-	keyname: string;
+  keyname: string;
   username: string;
   memo: string;
   genre: string;
