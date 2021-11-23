@@ -7,10 +7,10 @@ CREATE TABLE IF NOT EXISTS K_USER (
 );
 
 CREATE TABLE IF NOT EXISTS K_KEYSTORE (
-    KeyName varchar(255) NOT NULL,
+    Genre varchar(255) NOT NULL,
     UserName varchar(255) NOT NULL,
+    KeyName varchar(255),
     Memo text,
-    Genre varchar(255),
     UNIQUE(KeyName, UserName)
 );
 
