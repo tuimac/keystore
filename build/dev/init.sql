@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS K_USER (
 
 CREATE TABLE IF NOT EXISTS K_KEYSTORE (
     KeyName varchar(255) NOT NULL,
-    UserName varchar(255) NOT NULL REFERENCES K_USER(UserName),
+    UserName varchar(255) NOT NULL,
     Memo text,
     Genre varchar(255),
     UNIQUE(KeyName, UserName)
