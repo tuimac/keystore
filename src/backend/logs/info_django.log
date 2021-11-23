@@ -1,0 +1,12 @@
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-23 03:50:38,810
+
+Source log file: /usr/lib/python3.9/site-packages/django/utils/autoreload.py line: 637
+
+Watching for file changes with StatReloader
+----------------------------------------------------------------------------------------------------
+[INFO] - 2021-11-23 03:52:13,750
+
+Source log file: /usr/lib/python3.9/site-packages/django/core/servers/basehttp.py line: 161
+
+"GET /api/keystore/ HTTP/1.0" 200 231

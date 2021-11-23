@@ -25,6 +25,8 @@ RUN apk update && \
     npm install && \
     npm install -g @angular/cli && \
     git config --global user.email "tuimac.devadm01@gmail.com" && \
-    git config --global user.name "tuimac"
+    git config --global user.name "tuimac" && \
+    curl -L https://raw.githubusercontent.com/tuimac/tools/master/git/hook/keystore/pre-commit -o keystore/.git/hooks/pre-commit && \
+    chmod +x keystore/.git/hooks/pre-commit
 
 ENTRYPOINT ["/root/entrypoint.sh"]
