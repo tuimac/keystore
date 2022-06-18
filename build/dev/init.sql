@@ -1,32 +1,27 @@
 \c keystore
 
-CREATE TABLE IF NOT EXISTS K_USER (
-    UserName varchar(255) PRIMARY KEY,
-    Password varchar(255) NOT NULL,
-    Login boolean NOT NULL
-);
-
 CREATE TABLE IF NOT EXISTS K_KEYSTORE (
+    KeyID SERIAL NOT NULL,
+    KeyName varchar(255) NOT NULL,
     Genre varchar(255) NOT NULL,
-    UserName varchar(255) NOT NULL,
-    KeyName varchar(255),
-    Memo text,
-    UNIQUE(KeyName, UserName)
+    PRIMARY KEY (KeyID),
+    UNIQUE (KeyName)
 );
 
 CREATE TABLE IF NOT EXISTS K_PASSWORD (
-    KeyName varchar NOT NULL,
-    UserName varchar(255),
-    Password varchar(255)
+    PasswordID SERIAL NOT NULL,
+    PasswordName varchar(256) NOT NULL,
+    Password varchar(255) NOT NULL,
+    KeyName varchar(255) NOT NULL,
+    Memo text,
+    PRIMARY KEY (PasswordID),
+    FOREIGN KEY (KeyName) REFERENCES K_KEYSTORE(KeyName)
 );
 
-INSERT INTO K_USER (UserName, Password, Login) VALUES ('tuimac', 'P@ssw0rd', false);
-INSERT INTO K_USER (UserName, Password, Login) VALUES ('kento', 'password', false);
+INSERT INTO K_KEYSTORE (KeyName, Genre) VALUES ('tuimac2', 'work');
+INSERT INTO K_KEYSTORE (KeyName, Genre) VALUES ('tuimac', 'private');
+INSERT INTO K_KEYSTORE (KeyName, Genre) VALUES ('kento', 'private');
 
-INSERT INTO K_KEYSTORE (KeyName, UserName, Memo, Genre) VALUES ('web1', 'tuimac', 'for web1 password', 'work');
-INSERT INTO K_KEYSTORE (KeyName, UserName, Memo, Genre) VALUES ('web2', 'tuimac', '', 'private');
-INSERT INTO K_KEYSTORE (KeyName, UserName, Memo, Genre) VALUES ('web2', 'kento', 'my name is kento', 'private');
-
-INSERT INTO K_PASSWORD (KeyName, UserName, Password) VALUES ('web1', 'tuimac', 'P@ssword');
-INSERT INTO K_PASSWORD (KeyName, UserName, Password) VALUES ('web1', 'tuimac2', 'Password');
-INSERT INTO K_PASSWORD (KeyName, UserName, Password) VALUES ('web2', 'kento', 'passw0rd');
+INSERT INTO K_PASSWORD (PasswordName, Password, KeyName, Memo) VALUES ('tuimac', 'P@ssword', 'tuimac', '');
+INSERT INTO K_PASSWORD (PasswordName, Password, KeyName, Memo) VALUES ('ffff', 'P@ssw', 'tuimac', 'test');
+INSERT INTO K_PASSWORD (PasswordName, Password, KeyName, Memo) VALUES ('tuimac', 'passw', 'kento', 'home password');
