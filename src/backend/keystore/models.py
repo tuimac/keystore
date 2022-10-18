@@ -1,11 +1,12 @@
 from django.db import models
 
 class Keystore(models.Model):
-    keyname = models.CharField(max_length=255, primary_key=True)
-    username = models.CharField(max_length=255)
-    memo = models.TextField()
+    keyid = models.IntegerField(primary_key=True)
+    keyname = models.CharField(max_length=255, null=False)
+    password = models.CharField(max_length=255, null=False)
     genre = models.CharField(max_length=255)
+    memo = models.TextField()
+    url = models.CharField(max_length=255)
     class Meta:
-        unique_together = (("username", "keyname"),)
-        db_table = 'k_keystore'
+        db_table = 'keystore'
         managed = False

@@ -5,4 +5,4 @@ class KeystoreSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Keystore
-        fields = ['keyname', 'username', 'memo', 'genre']
+        fields = ['keyid', 'keyname', 'password', 'genre', 'memo', 'url']
