@@ -16,6 +16,9 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Check log directory
+if os.environ.get('LOG_DIR') is None:
+    LOG_DIR = '/var/log/keystore'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -139,7 +142,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, "logs/info_django.log"),
+            'filename': os.path.join(LOG_DIR, "keystore.log"),
             'maxBytes': 1024 * 1024 * 10,
             'formatter': 'file'
         },
