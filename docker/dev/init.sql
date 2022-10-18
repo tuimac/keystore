@@ -1,27 +1,15 @@
 \c keystore
 
-CREATE TABLE IF NOT EXISTS K_KEYSTORE (
+CREATE TABLE IF NOT EXISTS KEYSTORE (
     KeyID SERIAL NOT NULL,
     KeyName varchar(255) NOT NULL,
-    Genre varchar(255) NOT NULL,
-    PRIMARY KEY (KeyID),
-    UNIQUE (KeyName)
-);
-
-CREATE TABLE IF NOT EXISTS K_PASSWORD (
-    PasswordID SERIAL NOT NULL,
-    PasswordName varchar(256) NOT NULL,
-    Password varchar(255) NOT NULL,
-    KeyName varchar(255) NOT NULL,
+    Genre varchar(255),
     Memo text,
-    PRIMARY KEY (PasswordID),
-    FOREIGN KEY (KeyName) REFERENCES K_KEYSTORE(KeyName)
+    Url varchar(255),
+    PRIMARY KEY (KeyID)
 );
 
-INSERT INTO K_KEYSTORE (KeyName, Genre) VALUES ('tuimac2', 'work');
-INSERT INTO K_KEYSTORE (KeyName, Genre) VALUES ('tuimac', 'private');
-INSERT INTO K_KEYSTORE (KeyName, Genre) VALUES ('kento', 'private');
-
-INSERT INTO K_PASSWORD (PasswordName, Password, KeyName, Memo) VALUES ('tuimac', 'P@ssword', 'tuimac', '');
-INSERT INTO K_PASSWORD (PasswordName, Password, KeyName, Memo) VALUES ('ffff', 'P@ssw', 'tuimac', 'test');
-INSERT INTO K_PASSWORD (PasswordName, Password, KeyName, Memo) VALUES ('tuimac', 'passw', 'kento', 'home password');
+INSERT INTO KEYSTORE (KeyName, Genre, Memo, Url) VALUES ('tuimac1', 'work', 'this is for work', 'https://work.com');
+INSERT INTO KEYSTORE (KeyName, Genre, Memo, Url) VALUES ('tuimac2', 'work', 'work2', '');
+INSERT INTO KEYSTORE (KeyName, Genre, Memo, Url) VALUES ('ttt', 'ticket', '', 'http://work.com');
+INSERT INTO KEYSTORE (KeyName, Genre, Memo, Url) VALUES ('@@@', '', 'this is for @@@', 'https://work.com');
