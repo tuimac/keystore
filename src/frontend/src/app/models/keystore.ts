@@ -1,6 +1,7 @@
 export interface Keystore {
+  keyid: string;
   keyname: string;
-  username: string;
-  memo: string;
+  password: string;
   genre: string;
+  memo: string;
 }
