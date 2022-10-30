@@ -28,7 +28,7 @@ RUN apk update && \
     git config --global user.name "tuimac" && \
     mkdir -p keystore/.git/hooks && \
     curl -L https://raw.githubusercontent.com/tuimac/tools/master/git/hook/keystore/pre-commit -o keystore/.git/hooks/pre-commit && \
-    chmod +x keystore/.git/hooks/pre-commit \
+    chmod +x keystore/.git/hooks/pre-commit && \
     mkdir /var/log/keystore
 
 ENTRYPOINT ["/root/entrypoint.sh"]
