@@ -12,5 +12,5 @@ CREATE TABLE IF NOT EXISTS KEYSTORE (
 
 INSERT INTO KEYSTORE (KeyName, Password, Genre, Memo, Url) VALUES ('tuimac1', 'password', 'work', 'this is for work', 'https://work.com');
 INSERT INTO KEYSTORE (KeyName, Password, Genre, Memo, Url) VALUES ('tuimac2', 'P@ssw0rd', 'work', 'work2', '');
-INSERT INTO KEYSTORE (KeyName, Password, Genre, Memo, Url) VALUES ('ttt', 'ddd', 'ticket', 'ttt', '', 'http://work.com');
+INSERT INTO KEYSTORE (KeyName, Password, Genre, Memo, Url) VALUES ('ttt', 'ddd', 'ticket', '', 'http://work.com');
 INSERT INTO KEYSTORE (KeyName, Password, Genre, Memo, Url) VALUES ('@@@', 'test111', '', 'this is for @@@', 'https://work.com');
