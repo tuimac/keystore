@@ -11,7 +11,10 @@ EXPOSE 8000
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache git bash vim curl ncurses tree npm nodejs python3 python3-dev py3-pip nginx postgresql-client postgresql-dev gcc musl-dev && \
+    apk add --no-cache git bash vim tzdata curl ncurses tree npm nodejs python3 python3-dev py3-pip nginx postgresql-client postgresql-dev gcc musl-dev && \
+    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
+    echo "Asia/Tokyo" > /etc/timezone && \
+    apk del tzdata && \
     pip3 install -r requirements.txt && \
     mkdir /etc/vim/backup && \
     mkdir /etc/vim/undo && \
