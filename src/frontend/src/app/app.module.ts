@@ -14,14 +14,12 @@ import { MatListModule } from '@angular/material/list';
 
 import { CreatekeysComponent } from './components/createkeys/createkeys.component';
 import { HomeComponent } from './components/home/home.component';
-import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CreatekeysComponent,
-    LayoutComponent,
+    CreatekeysComponent
   ],
   imports: [
     BrowserModule,

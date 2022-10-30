@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { KeystoreService } from '../../services/keystore.service';
 import { Keystore } from '../../models/keystore';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'home',
