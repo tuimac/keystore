@@ -23,6 +23,7 @@ export class KeystoreService {
       { headers },
     ).pipe(
       map((data: Keystore[]) => {
+        console.log(data);
         return data;
       },
       catchError(error => {

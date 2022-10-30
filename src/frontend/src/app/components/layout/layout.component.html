@@ -1,0 +1,21 @@
+<mat-drawer-container class="sidebar">
+  <mat-toolbar color="primary">
+    <span class="spacer">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span [style.cursor]="'pointer'" routerLink="/">KeyStore</span>
+    </span>
+  </mat-toolbar>
+  <mat-drawer mode="side" #sidenav>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>navigate_before</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-action-list role="list">
+      <mat-list-item role="listitem">Create Keys</mat-list-item>
+      <mat-list-item role="listitem">Settings</mat-list-item>
+    </mat-action-list>
+  </mat-drawer>
+</mat-drawer-container>

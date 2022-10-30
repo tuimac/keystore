@@ -12,7 +12,7 @@ import { MatPaginator } from '@angular/material/paginator';
 export class HomeComponent implements OnInit {
 
   result: any;
-  displayedColumns: string[] = ['keyname', 'username', 'memo', 'genre'];
+  displayedColumns: string[] = ['keyid', 'keyname', 'genre'];
   dataSource: any;
 
   constructor(private keystoreService: KeystoreService) { }
