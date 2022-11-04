@@ -13,13 +13,13 @@ export class KeystoreService {
 
   constructor(private http: HttpClient) { }
 
-  getKey(): Observable<Keystore[]> {
+  getKey(id: string): Observable<Keystore[]> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
 
     return this.http.get<Keystore[]>(
-      `${this.url}`,
+      `${this.url}` + id,
       { headers },
     ).pipe(
       map((data: Keystore[]) => {
@@ -27,7 +27,7 @@ export class KeystoreService {
         return data;
       },
       catchError(error => {
-        return throwError('Runcommand: There are some error.');
+        return throwError(error);
       }))
     );
   }

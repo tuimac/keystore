@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   getKey(): void{
-    this.keystoreService.getKey()
+    this.keystoreService.getKey('')
       .subscribe((data: Keystore[]) => {
         this.dataSource = new MatTableDataSource<Keystore>(data);
         console.log(data);
