@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './utils/notfound/notfound.component';
 import { HomeComponent } from './components/home/home.component';
 import { CreatekeysComponent } from './components/createkeys/createkeys.component';
+import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreatekeysComponent
+  },
+  {
+    path: 'detail/:keyid',
+    component: DetailsComponent
   },
   {
     path: '**',
