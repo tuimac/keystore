@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class HomeComponent implements OnInit {
 
   result: any;
-  displayedColumns: string[] = ['keyid', 'keyname', 'genre'];
+  displayedColumns: string[] = ['keyname', 'genre'];
   dataSource: any;
 
   constructor(private keystoreService: KeystoreService) { }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Keystore } from '../../models/keystore';
+import { KeystoreService } from '../../services/keystore.service';
 
 @Component({
   selector: 'app-details',
@@ -8,12 +10,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  keyid: any;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private keystoreService: KeystoreService
+  ) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
-      const keyid = params.get('keyid');
-      console.log(keyid);
+      this.keyid = params.get('keyid');
     });
+  }
+  
+  getInfo(): void {
+    this.keystoreService.getKey(this.keyid.toString())
+      .subscribe((data: Keystore[]) => {
+        console.log(data);
+      })
   }
 }
