@@ -11,6 +11,7 @@ import { KeystoreService } from '../../services/keystore.service';
 export class DetailsComponent implements OnInit {
 
   keyid: any;
+  info: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,6 +28,7 @@ export class DetailsComponent implements OnInit {
     this.keystoreService.getKey(this.keyid.toString())
       .subscribe((data: Keystore[]) => {
         console.log(data);
+        this.info = data;
       })
   }
 }
