@@ -22,13 +22,14 @@ export class DetailsComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       this.keyid = params.get('keyid');
     });
+    this.getInfo(this.keyid);
   }
   
-  getInfo(): void {
-    this.keystoreService.getKey(this.keyid.toString())
+  getInfo(keyid: any): void {
+    this.keystoreService.getKey(keyid)
       .subscribe((data: Keystore[]) => {
         console.log(data);
-        this.info = data;
+        this.info = data[0];
       })
   }
 }

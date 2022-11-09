@@ -18,7 +18,7 @@ class KeystoreBase(views.APIView):
             if self.kwargs.get('keyid') == None:
                 query = Keystore.objects.all()
             else:
-                query = Keystore.objects.filter(keyname=self.kwargs.get('keyid'))
+                query = Keystore.objects.filter(keyid=self.kwargs.get('keyid'))
             response = KeystoreSerializer(query, many=True)
             return Response(response.data)
         except:
