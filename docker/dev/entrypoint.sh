@@ -1,20 +1,33 @@
 #!/bin/bash
 
-cd /root/keystore/src/frontend
-npm start &
-
-cd /root/keystore/src/backend
-
-while true; do
-    PGPASSWORD=password psql -U keystore -h postgres -c "\l" > /dev/null
-    if [ `echo $?` -eq 0 ]; then
-        break
+function config_variable(){
+    if [ $# -ne 3 ]; then
+        echo 'Need the argument which are PJT_NAME and WORK_DIR.'
+        exit 1
     fi
-done
+    PJT_NAME=$1
+    WORK_DIR=$2
+}
 
-python3 manage.py makemigrations --no-input
-python3 manage.py migrate
-python3 manage.py migrate --fake
-python3 manage.py runserver 0.0.0.0:8000 &
+function start_backend(){
+    cd ${WORK_DIR}/${PJT_NAME}/src/backend
+    gunicorn backend.wsgi
+}
 
-/usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
+function start_frontend(){
+    cd ${WORK_DIR}/${PJT_NAME}/src/frontend
+    npm start &
+}
+
+function start_nginx(){
+    /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
+}
+
+function main(){
+    start_backend
+    start_frontend
+    start_nginx
+}
+
+
+main $1 $2

@@ -22,7 +22,7 @@ services:
     container_name: keystore
     restart: always
     ports:
-      - 80:80
+      - 8001:80
     environment:
       DATABASE: keystore
       DB_USER: keystore

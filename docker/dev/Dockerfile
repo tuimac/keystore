@@ -1,17 +1,22 @@
 FROM alpine:latest
 
-WORKDIR /root
+ENV PJT_NAME=fileserver
+ENV WORK_DIR=/root
+
+WORKDIR $WORK_DIR
 
 ADD entrypoint.sh /root/entrypoint.sh
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD requirements.txt /root/requirements.txt
+ADD gunicorn.conf.py /etc/gunicorn/gunicorn.conf.py
 
 EXPOSE 80
 EXPOSE 8000
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache git bash vim tzdata curl ncurses tree npm nodejs python3 python3-dev py3-pip nginx postgresql-client postgresql-dev gcc musl-dev && \
+    apk add --no-cache git bash tzdata curl ncurses tree npm nodejs python3 python3-dev py3-pip nginx postgresql-client postgresql-dev gcc musl-dev && \
+    apk add --no-cache --repository https://dl-cdn.alpinelinux.org/alpine/v3.13/main vim~=8.2.4836-r0 && \
     cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
     echo "Asia/Tokyo" > /etc/timezone && \
     apk del tzdata && \
@@ -24,14 +29,14 @@ RUN apk update && \
     curl -L https://raw.githubusercontent.com/tuimac/tools/master/git/setup.sh -o /root/setup.sh && \
     chmod +x setup.sh && \
     git clone https://github.com/tuimac/keystore && \
-    cd /root/keystore/src/frontend && \
-    npm install && \
     npm install -g @angular/cli && \
-    git config --global user.email "tuimac.devadm01@gmail.com" && \
-    git config --global user.name "tuimac" && \
-    mkdir -p /root/keystore/.git/hooks && \
-    curl -L https://raw.githubusercontent.com/tuimac/tools/master/git/hook/keystore/pre-commit -o /root/keystore/.git/hooks/pre-commit && \
-    chmod +x /root/keystore/.git/hooks/pre-commit && \
-    mkdir /var/log/keystore
+    mkdir /var/log/gunicorn && \
+    touch /var/log/gunicorn/access.log && \
+    touch /var/log/gunicorn/error.log && \
+    mkdir /var/log/keystore && \
+    touch /var/log/keystore/main.log && \
+    git clone https://github.com/tuimac/${PJT_NAME} && \
+    cd $WORK_DIR/$PJT_NAME/src/frontend && \
+    npm ci
 
-ENTRYPOINT ["/root/entrypoint.sh"]
+ENTRYPOINT /root/entrypoint.sh ${PJT_NAME} ${WORK_DIR}
