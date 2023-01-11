@@ -4,3 +4,6 @@ django-filter
 django-cors-headers
 markdown
 psycopg2
+setuptools
+gunicorn
+requests
