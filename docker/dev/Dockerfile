@@ -28,14 +28,13 @@ RUN apk update && \
     curl -L https://raw.githubusercontent.com/tuimac/tools/master/linux/bashrc/.bashrc_node_docker -o /root/.bashrc  && \
     curl -L https://raw.githubusercontent.com/tuimac/tools/master/git/setup.sh -o /root/setup.sh && \
     chmod +x setup.sh && \
-    git clone https://github.com/tuimac/${PJT_NAME} && \
     mkdir /var/log/gunicorn && \
     touch /var/log/gunicorn/access.log && \
     touch /var/log/gunicorn/error.log && \
     mkdir /var/log/${PJT_NAME} && \
     touch /var/log/${PJT_NAME}/main.log && \
     git clone https://github.com/tuimac/${PJT_NAME} && \
-    cd $WORK_DIR/$PJT_NAME/src/frontend && \
+    cd ${WORK_DIR}/${PJT_NAME}/src/frontend && \
     npm install -g @angular/cli && \
     npm ci
 

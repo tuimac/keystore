@@ -11,7 +11,7 @@ function config_variable(){
 
 function start_backend(){
     cd ${WORK_DIR}/${PJT_NAME}/src/backend
-    gunicorn backend.wsgi
+    gunicorn backend.wsgi &
 }
 
 function start_frontend(){
